@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>HTML5 - 前端与移动开发学院|传智播客</title>
+  <meta name="description" content="HTML5 教学课件 by 汪磊 @2015-12-18 14:24:44">
+  <meta name="keywords" content="汪磊,HTML5,教程,视频,课程">
+  <meta name="author" content="汪磊 (ice@wedn.net)">
+  <link rel="stylesheet" href="lib/reveal/css/reveal.css">
+  <link rel="stylesheet" href="lib/reveal/css/theme/black.css">
+  <link rel="stylesheet" href="lib/reveal/lib/css/zenburn.css">
+  <link rel="stylesheet" href="lib/style.css">
+  <base target="_blank">
+  <script>
+    (function(window) {
+      var link = window.document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'lib/reveal/css/print/pdf.css' : 'lib/reveal/css/print/paper.css';
+      window.document.getElementsByTagName('head')[0].appendChild(link);
+    })(window);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>HTML5</h1>
+        <aside class="notes">
+          讲师：汪磊
+          <br>QQ：27101514
+          <br>WeChat：WEDN-NET
+          <br>Email：ice@wedn.net
+        </aside>
+      </section>
+      <!-- 1. overview start -->
+      <section>
+        <section>
+          <h2>一、概述</h2>
+        </section>
+        <!-- 1.1. Web发展时间轴 start -->
+        <section>
+          <h3>Web 技术发展时间轴</h3>
+          <ol>
+            <li class="fragment"><strong>1991</strong> HTML</li>
+            <li class="fragment"><strong>1994</strong> HTML2</li>
+            <li class="fragment"><strong>1996</strong> CSS1 + JavaScript</li>
+            <li class="fragment"><strong>1997</strong> HTML4</li>
+            <li class="fragment"><strong>1998</strong> CSS2</li>
+            <li class="fragment"><strong>2000</strong> XHTML1</li>
+            <li class="fragment"><strong>2002</strong> 表格布局</li>
+            <li class="fragment"><strong>2005</strong> AJAX</li>
+            <li class="fragment"><strong>2008</strong> HTML5 草案发布</li>
+            <li class="fragment"><strong>2014</strong> HTML5 定稿</li>
+          </ol>
+        </section>
+        <section>
+          <h3>从前端技术看阶段</h3>
+          <ol>
+            <li class="fragment">Web 1.0 内容为主，主要流行HTML和CSS</li>
+            <li class="fragment">Web 2.0 动态网页，流行AJAX/JavaScript/DOM</li>
+            <li class="fragment">HTML5 时代，WEB开发回归富客户端</li>
+          </ol>
+        </section>
+        <!-- 1.1. Web发展时间轴 end -->
+        <!-- 1.2. 回顾html start -->
+        <section>
+          <h3>Review of HTML</h3>
+          <p class="fragment">什么是HTML？</p>
+          <p class="fragment">Hyper Text Markup Language</p>
+          <p class="fragment">超文本标记</p>
+          <p class="fragment">什么是超文本标记？</p>
+          <p class="fragment fg-warning">用来表示比普通文本牛X一点的文本</p>
+        </section>
+        <section>
+          <h3>e.g.</h3>
+          <pre><code data-trim contenteditable>
+&lt;h1&gt;淹死的金鱼&lt;/h1&gt;
+&lt;h2&gt;xxxx年2月30日 星期一 晴&lt;/h2&gt;
+&lt;p&gt;
+  今天一天都没有出太阳，&lt;strong&gt;真不好&lt;/strong&gt;，
+  爸爸买回两条&lt;strong&gt;金鱼&lt;/strong&gt;，养在水缸淹死一条，
+  我很&lt;strong&gt;伤心&lt;/strong&gt;。
+&lt;/p&gt;
+          </code></pre>
+        </section>
+        <section>
+          <h3>SO ~</h3>
+          <div class="fragment">HTML5是HTML的最新版本</div>
+          <p class="fragment">HTML5是用来表示更NB一点的文本<span class="fragment fg-warning"> ？</span></p>
+          <h3 class="fragment fg-danger">NO ！！！</h3>
+          <p class="fragment fg-warning">这个仅仅可以理解为H5的狭义概念</p>
+        </section>
+        <!-- 1.2. 回顾html end -->
+        <!-- 1.3. 什么是HTML5 start -->
+        <section>
+          <h3>What is <a href="http://baike.baidu.com/view/951383.htm">HTML5</a></h3>
+          <p class="fragment">H5草案前身</p>
+          <p class="fragment"><span class="label label-primary">Web Application</span></p>
+          <p class="fragment">提出 by <a href="http://baike.baidu.com/view/3863799.htm">WHATWG</a> @2004</p>
+          <p class="fragment">接纳 by <a href="http://baike.baidu.com/view/80669.htm">W3C</a> @2007</p>
+          <p class="fragment">发布HTML5第一个草案 by W3C @2008-01-22</p>
+          <p class="fragment">
+            <span class="label label-primary">HTML5</span>
+            <span class="fg-danger">≠</span>
+            <span class="label label-primary">HTML next version</span>
+          </p>
+        </section>
+        <section>
+          <h3>What is HTML5</h3>
+          <p class="fragment">
+            <span class="label label-primary">HTML5</span>
+            <span>≈</span>
+            <span class="fragment label label-info">HTML↑</span>
+            <span>+</span>
+            <span class="fragment label label-success">CSS↑</span>
+            <span>+</span>
+            <span class="fragment label label-danger">JavaScript API↑</span>
+          </p>
+          <p class="fragment">广义上：新一代开发Web富客户端应用程序整体解决方案</p>
+          <p class="fragment">
+            <span class="label label-lg label-primary">Structure</span>
+            <span>→</span>
+            <span class="label label-lg label-info">Style</span>
+            <span>→</span>
+            <span class="label label-lg label-success">Interactive</span>
+          </p>
+          <p class="fragment">全包了！！！</p>
+        </section>
+        <section>
+          <h3>What is Rich Client</h3>
+          <ul>
+            <li class="fragment">很强交互性和体验</li>
+            <li class="fragment">在用户的电脑上使用客户端程序</li>
+          </ul>
+        </section>
+        <section>
+          <h3><a href="http://www.oschina.net/news/40374/web-pages-10-years-ago">十年之前</a></h3>
+          <img class="fragment" src="img/01.png">
+          <p class="fragment">just for 内容，没有交互</p>
+        </section>
+        <section>
+          <h3>想要交互、绚丽的效果</h3>
+          <p class="fragment"><span class="label label-lg label-danger">Adobe Flash</span></p>
+          <p class="fragment">
+            e.g.
+            <a href="http://moodstream.gettyimages.com/">Moodstream</a>、
+            <a href="http://waterlife.nfb.ca/#/">Waterlife</a>、
+            <a href="https://mono-1.com/monoface/main.html">monoface</a>、
+            <a href="http://buzzorange.com/techorange/2011/04/27/top-ten-2011-flash-designs/">etc.</a>
+          </p>
+          <p class="fragment"><span class="label label-info">被封杀</span> and <span class="label label-success">孤芳自赏</span></p>
+          <p class="fragment">link: <a href="http://www.zhihu.com/question/19728465">关于H5和Flash</a></p>
+        </section>
+        <section>
+          <h3>When HTML5</h3>
+          <img src="img/02.png" height="400">
+          <p class="fragment">让Web开发重新回归富客户端的时代</p>
+        </section>
+        <section class="text-left">
+          <h3>HTML5 的应用场景</h3>
+          <ul>
+            <li class="fragment">
+              极具表现力的网页
+              <ul>
+                <li class="fragment">案例非常多</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              网页应用程序
+              <ul>
+                <li class="fragment">PC端：iCloud、百度脑图、Office 365···</li>
+                <li class="fragment">APP端：淘宝、京东、美团···</li>
+                <li class="fragment">WeChat端：淘宝、京东、美团···</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              混合式本地应用
+              <ul>
+                <li class="fragment">PC端：网易云音乐、有道词典···</li>
+                <li class="fragment">APP端：淘宝、京东、美团···</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              简单的游戏
+            </li>
+          </ul>
+        </section>
+        <!-- 1.3. 什么是HTML5 end -->
+        <!-- 1.4. HTML5新特性 start -->
+        <section>
+          <h3><a href="http://www.w3.org/TR/2014/WD-html5-diff-20140918/">HTML5 到底多了点啥？</a></h3>
+          <p class="fragment">我个人将这些变化大体分为三类：</p>
+          <ul>
+            <li class="fragment">JavaScript API</li>
+            <li class="fragment">HTML</li>
+            <li class="fragment">CSS</li>
+          </ul>
+        </section>
+        <section>
+          <h3>HTML</h3>
+          <ul class="col-2 fragment">
+            <li>
+              标签
+              <ul>
+                <li>更语义化标签</li>
+                <li>应用程序标签</li>
+              </ul>
+            </li>
+            <li>
+              智能表单
+              <ul>
+                <li>新的表单类型</li>
+                <li>虚拟键盘适配</li>
+              </ul>
+            </li>
+            <li>
+              网页多媒体
+              <ul>
+                <li>音频</li>
+                <li>视频</li>
+                <li>字幕</li>
+              </ul>
+            </li>
+            <li>
+              属性
+              <ul>
+                <li>链接关系描述</li>
+                <li>结构数据标记</li>
+                <li>ARIA</li>
+                <li>自定义属性</li>
+              </ul>
+            </li>
+            <li>
+              Canvas
+              <ul>
+                <li>2D 绘图</li>
+                <li>3D (WebGL)</li>
+              </ul>
+            </li>
+            <li>SVG</li>
+          </ul>
+        </section>
+        <section>
+          <h3>JavaScript API</h3>
+          <ul class="col-3 fragment" style="font-size: 30px;">
+            <li>
+              核心平台提升
+              <ul>
+                <li>新的选择器</li>
+                <li>Element.classList</li>
+                <li>访问历史API</li>
+                <li>全屏API</li>
+              </ul>
+            </li>
+            <li>
+              网页存储
+              <ul>
+                <li>Application Cache</li>
+                <li>localStorage</li>
+                <li>sessionStorage</li>
+                <li>WebSQL</li>
+                <li>IndexedDB</li>
+              </ul>
+            </li>
+            <li>
+              设备信息访问
+              <ul>
+                <li>网络状态</li>
+                <li>硬件访问</li>
+                <li>设备方向</li>
+                <li>地理围栏</li>
+              </ul>
+            </li>
+            <li>
+              拖放操作
+              <ul>
+                <li>网页内拖放</li>
+                <li>桌面拖入</li>
+                <li>桌面拖出</li>
+              </ul>
+            </li>
+            <li>
+              文件
+              <ul>
+                <li>文件系统API</li>
+                <li>FileReader</li>
+              </ul>
+            </li>
+            <li>
+              网络访问
+              <ul>
+                <li>XMLHttpRequest</li>
+                <li>fetch</li>
+                <li>WebSocket</li>
+              </ul>
+            </li>
+            <li>多线程</li>
+            <li>桌面通知</li>
+          </ul>
+        </section>
+        <section>
+          <h3>CSS</h3>
+          <ul class="col-2 fragment">
+            <li>New Selector</li>
+            <li>Web Fonts</li>
+            <li>Text Styles</li>
+            <li>Opacity</li>
+            <li>HSL Color</li>
+            <li>Rounded Corners</li>
+            <li>Gradients</li>
+            <li>Shadows</li>
+            <li>Background Enhancements</li>
+            <li>Border Image</li>
+            <li>Flexible Box Model</li>
+            <li>Transforms</li>
+            <li>Transitions</li>
+            <li>Animations</li>
+            <li>etc. 后面详细讨论</li>
+          </ul>
+        </section>
+        <!-- 1.4. HTML5新特性 end -->
+        <!-- 1.5. HTML5骨架 start -->
+        <section>
+          <h3>HTML5 骨架</h3>
+          <ul>
+            <li class="fragment">HTML5的DOCTYPE声明做了最大简化</li>
+            <li class="fragment">在标准的HTML5骨架中charset是直接在meta中设置charset</li>
+            <li class="fragment">字符编码的设置一定是在head中的第一行，再晚就来不及了</li>
+          </ul>
+        </section>
+        <!-- 1.5. HTML5骨架 end -->
+      </section>
+      <!-- 1. overview end -->
+      <!-- 2. 语义化标签结构 start -->
+      <section>
+        <section>
+          <h2>二、语义化标签结构</h2>
+        </section>
+        <!-- 2.1. 语义化的标签 start -->
+        <section>
+          <h3>语义化的标签</h3>
+          <p>就是让HTML代码符合内容的结构化，标签语义化</p>
+        </section>
+        <section>
+          <h3>以前我们可能是这样的：</h3>
+          <img class="no-shadow" src="img/03.png" alt="传统网页结构">
+        </section>
+        <section>
+          <h3>HTML5新主体结构标签</h3>
+          <ul>
+            <li>section：独立的内容节块，一般包含标题和内容</li>
+            <li>article：定义文档中的具体的文章内容</li>
+            <li>nav：页面导航的链接组</li>
+            <li>aside：标签用来装载非正文的内容</li>
+            <li>header：定义文档的页眉</li>
+            <li>footer：定义section或document的页脚</li>
+          </ul>
+        </section>
+        <section>
+          <h3>以后我们将是这样的：</h3>
+          <img class="no-shadow" src="img/04.png" alt="现代网页结构">
+        </section>
+        <section>
+          <h3>为什么要有语义化标签</h3>
+          <p class="fragment fg-success">能够便于开发者阅读和写出更优雅的代码，代码如诗</p>
+          <p class="fragment fg-danger">同时让浏览器或是网络爬虫可以很好地解析，从而更好分析其中的内容</p>
+          <p class="fragment fg-info">更好地搜索引擎优化</p>
+          <p class="fragment">
+            <span class="label label-danger">切记</span>
+            <ul class="fragment">
+              <li>HTML的职责是描述一块内容是什么（或其意义）</li>
+              <li>而不是它长的什么样子，它的外观应该由CSS来决定。</li>
+            </ul>
+          </p>
+        </section>
+        <!-- 2.1. 语义化的标签 end -->
+        <section>
+          <h3>语义化标签 学习目标</h3>
+          <ul>
+            <li class="fragment fg-info">掌握语义化标签的重要性</li>
+            <li class="fragment fg-info">可以正确使用语义化标签</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 2. 语义化标签结构 end -->
+      <!-- 3. 智能表单 start -->
+      <section>
+        <section>
+          <h2>三、智能表单</h2>
+        </section>
+        <!-- 3.1. 新的表单类型 start -->
+        <section>
+          <h3>新的表单类型</h3>
+          <ul>
+            <li>email - 限定输入内容为邮箱地址</li>
+            <li>url - 限定输入内容为URL</li>
+            <li>number - 限定输入内容为数字</li>
+            <li>range - 数值范围选择器</li>
+            <li>
+              Date Pickers - 日期时间选择器
+              <ul>
+                <li>date - 选取日、月、年</li>
+                <li>month - 选取月、年</li>
+                <li>week - 选取周和年</li>
+                <li>time - 选取时间（小时和分钟）</li>
+                <li>datetime - 选取UTC时间、日、月、年</li>
+                <li>datetime-local - 选取本地时间、日、月、年</li>
+              </ul>
+            </li>
+            <li>search - 搜索域（语言）</li>
+          </ul>
+        </section>
+        <!-- 3.1. 新的表单类型 end -->
+        <!-- 3.2. 新的表单属性 start -->
+        <section>
+          <h3>新的表单属性</h3>
+          <ul>
+            <li>新的 form 属性：
+              <ul class="col-2">
+                <li>autocomplete</li>
+                <li>novalidate</li>
+              </ul>
+            </li>
+            <li>
+              新的 input 属性：
+              <ul class="col-3">
+                <li>autocomplete</li>
+                <li>autofocus</li>
+                <li>form</li>
+                <li>form overrides (formaction, formenctype, formmethod, formnovalidate, formtarget)</li>
+                <li>list</li>
+                <li>min / max / step</li>
+                <li>multiple</li>
+                <li>pattern</li>
+                <li>placeholder</li>
+                <li>required</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- 3.2. 新的表单属性 end -->
+        <!-- 3.3. 键盘适配 start -->
+        <section>
+          <h3>虚拟键盘适配</h3>
+          <pre class="fragment"><code data-trim>
+&lt;input type="text" name="txt_text" id="txt_text"&gt;
+&lt;input type="number" name="txt_number" id="txt_number"&gt;
+&lt;input type="email" name="txt_email" id="txt_email"&gt;
+&lt;input type="tel" name="txt_tel" id="txt_tel"&gt;
+&lt;input type="url" name="txt_url" id="txt_url"&gt;
+          </code></pre>
+          <div>
+            <img class="no-shadow fragment" src="img/input_01.png" alt="text" style="display: inline-block;width: 18%;">
+            <img class="no-shadow fragment" src="img/input_02.png" alt="number" style="display: inline-block;width: 18%;">
+            <img class="no-shadow fragment" src="img/input_03.png" alt="email" style="display: inline-block;width: 18%;">
+            <img class="no-shadow fragment" src="img/input_04.png" alt="tel" style="display: inline-block;width: 18%;">
+            <img class="no-shadow fragment" src="img/input_05.png" alt="url" style="display: inline-block;width: 18%;">
+          </div>
+        </section>
+        <!-- 3.3. 键盘适配 end -->
+        <section>
+          <h3>智能表单 学习目标</h3>
+          <ul>
+            <li class="fragment fg-info">网页开发过程中可以针对需求使用特定的智能表单类型</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 3. 智能表单 end -->
+      <!-- 4. 网页多媒体 start -->
+      <section>
+        <section>
+          <h2>四、网页多媒体</h2>
+          <p class="fragment">在此之前需要依赖于第三方插件（e.g. flash）</p>
+        </section>
+        <!-- 4.1. 音频 start -->
+        <section>
+          <h3>音频</h3>
+          <pre class="fragment" style="width: 650px;"><code data-trim contenteditable>
+&lt;audio controls="controls"&gt;
+  &lt;source src="src/music.mp3" type="audio/mpeg"/&gt;
+&lt;/audio&gt;
+          </code></pre>
+          <p class="fragment">DEMO：</p>
+          <p class="fragment">
+            <audio controls="controls">
+              <source src="img/music.mp3">
+            </audio>
+          </p>
+        </section>
+        <!-- 4.1. 音频 end -->
+        <!-- 4.2. 视频 start -->
+        <section>
+          <h3>视频</h3>
+          <pre class="fragment" style="width: 660px;"><code data-trim contenteditable>
+&lt;video controls="controls"&gt;
+  &lt;!-- 不同浏览器支持格式不一样 --&gt;
+  &lt;source src="fun.ogg" type="video/ogg" /&gt;
+  &lt;source src="fun.mp4" type="video/mp4" /&gt;
+  &lt;!-- 当浏览器不兼容video标签，就会将他以div方式解析 --&gt;
+  SHIT 你的浏览器不支持！
+&lt;/video&gt;
+          </code></pre>
+          <aside class="notes">
+            https://html5media.info/
+          </aside>
+        </section>
+        <section>
+          <h3>DEMO：</h3>
+          <video controls="controls" height="380" poster="img/02.png">
+            <source src="img/chrome.mp4" type="video/mp4" />
+            <!-- 当浏览器不兼容video标签，就会将他以div方式解析 -->
+            SHIT 你的浏览器不支持！
+          </video>
+          <p class="fragment"><a href="demo/html/08-media-video.html"><i class="fa fa-link"></i></a></p>
+        </section>
+        <section>
+          <h3>属性</h3>
+          <img src="img/07.png" class="no-shadow" height="350">
+        </section>
+        <section>
+          <h3><a href="http://www.w3schools.com/tags/tag_track.asp">字幕</a></h3>
+          <pre class="fragment"><code data-trim contenteditable>
+&lt;video id="clip" controls&gt;
+  &lt;source src="fun.mp4" type="video/mp4" /&gt;
+  &lt;track label="English subtitles" kind="subtitles"
+  srclang="en" src="video-subtitles-en.vtt" default /&gt;
+&lt;/video&gt;
+          </code></pre>
+          <p class="fragment"><a href="demo/html/09-media-track.html"><i class="fa fa-link"></i></a></p>
+        </section>
+        <!-- 4.2. 视频 end -->
+        <!-- 4.3. 全屏API start -->
+        <section>
+          <h3>全屏 API</h3>
+          <pre class="fragment"><code data-trim contenteditable>
+var elem = 需要全屏的元素;
+if (elem.webkitRequestFullScreen) {
+  elem.webkitRequestFullScreen();
+} else if (elem.mozRequestFullScreen) {
+  elem.mozRequestFullScreen();
+} else if (elem.requestFullScreen){
+  elem.requestFullScreen();
+}
+          </code></pre>
+          <p class="fragment fg-primary">Please press <span class="label label-danger">F</span></p>
+        </section>
+        <!-- 4.3. 全屏API end -->
+        <!-- 4.4. SVG start -->
+        <section>
+          <h3><a href="http://baike.baidu.com/subview/85022/9539763.htm">SVG * </a></h3>
+          <p class="fragment fg-primary">Scalable Vector Graphics 可缩放矢量图形</p>
+          <p class="fragment fg-success">基于可扩展标记语言</p>
+          <p class="fragment fg-info">优势：体积小，质量高，效果好，可控程度高</p>
+          <p class="fragment">
+            扩展连接：
+            <a href="http://www.w3schools.com/html/html5_svg.asp">HTML5中的SVG</a>
+            <a href="http://www.w3schools.com/svg/">SVG</a>
+          </p>
+        </section>
+        <section>
+          <h3>Inline SVG Demo</h3>
+          <svg width="300px" height="300px">
+            <defs>
+              <linearGradient id="g_color" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="5%" stop-color="red"></stop>
+                <stop offset="95%" stop-color="blue" stop-opacity="0.5"></stop>
+              </linearGradient>
+            </defs>
+            <circle class="important" cx="50%" cy="50%" r="100" fill="url(#g_color)" onmousedown="alert('hello');" />
+          </svg>
+        </section>
+        <section>
+          <h3>SVG File</h3>
+          <iframe src="img/famoustiger.svg" style="border:none; width:430px; height:430px;"></iframe>
+        </section>
+        <!-- 4.4. SVG end -->
+        <section>
+          <h3>多媒体 学习目标</h3>
+          <ul>
+            <li class="fragment fg-info">掌握网页多媒体的意义</li>
+            <li class="fragment fg-info">对Video标签和Audio标签熟练使用</li>
+            <li class="fragment fg-info">自定义播放器（多媒体标签API）</li>
+            <li class="fragment fg-info">了解字幕标签</li>
+            <li class="fragment fg-info">了解SVG是什么东西</li>
+            <li class="fragment fg-info">可以在网页中使用别人做好的SVG</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 4. 网页多媒体 end -->
+      <!-- 5. JS 基础 API start -->
+      <section>
+        <section>
+          <h2>五、JS 基础 API</h2>
+        </section>
+        <!-- 5.1. New Selectors start -->
+        <section>
+          <h3>New Selectors</h3>
+          <p class="fragment">提供类似于jQuery中选择器的API</p>
+          <ul>
+            <li>
+              <p class="fragment">通过类名查找元素</p>
+              <pre class="fragment" style="width: 660px"><code data-trim contenteditable>
+document.getElementById('section1'); √ 已经get
+document.getElementsByTagName('div'); √ 已经get
+document.getElementsByClassName('section');
+              </code></pre>
+            </li>
+            <li>
+              <p class="fragment">通过CSS选择器语法查找元素</p>
+              <pre class="fragment" style="width: 660px"><code data-trim contenteditable>
+document.querySelectorAll('ul');
+document.querySelectorAll('.container');
+document.querySelector('div#container > .inner');
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+        <!-- 5.1. New Selectors end -->
+        <!-- 5.2. Element.classList start -->
+        <section>
+          <h3>Element.classList</h3>
+          <p class="fragment">提供类似于jQuery中CSS操作的API</p>
+          <pre class="fragment"><code data-trim contenteditable>
+&lt;div id="demo" class="highlighted"&gt;&lt;/div&gt;
+// script
+document.querySelector('#btn')
+  .addEventListener('click', function() {
+    var demoElement = document.querySelector('#demo');
+    var demoClassList = demoElement.classList;
+    demoClassList.add('bordered'); // 添加一个类名
+    demoClassList.add('shadowed'); // 添加一个类名
+    demoClassList.remove('highlighted'); // 删除一个类名
+    // 获取是否存在指定类名
+    var isAnimated = demoClassList.contains('animated');
+    // 根据第二个参数切换一个类名
+    demoClassList.toggle('animated', !isAnimated);
+    console.log(demoClassList);
+    // ["bordered", "shadowed", "animated"]
+  });
+          </code></pre>
+        </section>
+        <!-- 5.2. Element.classList end -->
+        <!-- 5.3. data-* custom attribute start -->
+        <section>
+          <h3>自定义属性 data-* !</h3>
+          <p class="fragment">通过DOM存储与DOM对象强相关的数据</p>
+          <pre class="fragment"><code data-trim contenteditable>
+&lt;ul id="users"&gt;
+  &lt;li data-id="1" data-age="18" data-gender="true"&gt;张三&lt;/li&gt;
+  &lt;li data-id="2" data-age="18" data-gender="false"&gt;李四&lt;/li&gt;
+  &lt;li data-id="3" data-age="18" data-gender="true"&gt;王二&lt;/li&gt;
+&lt;/ul&gt;
+          </code></pre>
+          <pre class="fragment"><code data-trim contenteditable>
+var listItems = document.querySelectorAll('#users > li');
+var dataset = listItems[0].dataset;
+console.log(dataset);
+// output: {id:1,age:18,gender:true}
+          </code></pre>
+        </section>
+        <!-- 5.3. data-* custom attribute end -->
+        <!-- 5.4. 访问历史API start -->
+        <!-- 流行框架阶段再讲，现在讲学生接受不了 -->
+        <!-- <section>
+          <h4><a href="http://segmentfault.com/a/1190000002447556">访问历史 API</a></h4>
+          <p class="fragment fg-info">在此之前我们可以通过history对象实现前进、后退和刷新之类的操作</p>
+          <p class="fragment fg-primary">H5中开放了更多的API：历史状态操作</p>
+          <p class="fragment">HTML5 history API包括：
+            <ul>
+              <li class="fragment">history.pushState()方法：新增状态</li>
+              <li class="fragment">history.replaceState()方法：替换状态</li>
+              <li class="fragment">window.onpopstate事件：得到状态</li>
+            </ul>
+          </p>
+          <p class="fragment">IE10+和其他主流浏览器</p>
+        </section> -->
+        <!-- 5.4. 访问历史API end -->
+        <section>
+          <h3>JS 基础 API 学习目标</h3>
+          <ul>
+            <li class="fragment fg-danger">熟练使用新选择器和ClassList</li>
+            <li class="fragment fg-primary">熟练使用data-*自定义属性</li>
+            <li class="fragment fg-success">对访问历史操作有基本的了解，为以后开发SPA做准备</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 5. JS 基础 API end -->
+      <!-- 6. 离线存储 start -->
+      <section>
+        <section>
+          <h2>六、离线存储</h2>
+          <p class="fragment">通过以下API，可以轻松构建离线H5应用</p>
+        </section>
+        <!-- 6.1. Application Cache start -->
+        <section>
+          <h3>Application Cache</h3>
+          <p class="fragment fg-primary">就是让网页可以离线访问的技术</p>
+          <pre class="fragment"><code>&lt;html manifest="cache.manifest"&gt;</code></pre>
+          <pre class="fragment"><code>
+CACHE MANIFEST
+# version 1.0.7
+
+CACHE:
+  css/style.css
+  js/script.js
+  img/logo.png
+  index.html
+
+NETWORK:
+  *
+          </code></pre>
+        </section>
+        <!-- 6.1. Application Cache end -->
+        <!-- 6.2. WebStorage start -->
+        <section>
+          <h3>WebStorage</h3>
+          <p class="fragment fg-primary">localStorage & sessionStorage</p>
+          <pre class="fragment" style="width: 620px"><code data-trim contenteditable>
+var btnSet = document.querySelector('#btn_set');
+var btnGet = document.querySelector('#btn_get');
+var txtValue = document.querySelector('#txt_value');
+btnGet.addEventListener('click', function() {
+  // txtValue.value = localStorage.getItem('key1');
+  txtValue.value = localStorage['key1'];
+});
+btnSet.addEventListener('click', function() {
+  // localStorage.setItem('key1', txtValue.value);
+  localStorage['key1'] = txtValue.value;
+});
+          </code></pre>
+        </section>
+        <!-- 6.2. WebStorage end -->
+        <section>
+          <h3>网页存储 学习目标</h3>
+          <ul>
+            <li class="fragment fg-danger">熟练使用Application Cache</li>
+            <li class="fragment fg-danger">熟练使用本地存储</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 6. 离线存储 end -->
+      <!-- 7. 文件 API start -->
+      <section>
+        <section>
+          <h2>七、文件 API</h2>
+        </section>
+        <!-- 7.1. 读取本地文件信息 start -->
+        <section>
+          <h3>读取本地文件信息</h3>
+          <p class="fragment fg-info">通过file表单或拖放操作选择文件</p>
+          <p class="fragment fg-success">还可以通过JavaScript读取文件的名称、大小、类型、和修改时间</p>
+          <pre class="fragment"><code data-trim contenteditable>
+&lt;input id="input_1" class="form-control" type="file"&gt;
+// script
+var input = document.querySelector('#input_1');
+// 获取文件域中选择的文件
+// var file = input.files[0];
+var file = input.files.item(0);
+          </code></pre>
+        </section>
+        <!-- 7.1. 读取本地文件信息 end -->
+        <!-- 7.2. FileReader API start -->
+        <section>
+          <h3>FileReader API</h3>
+          <p class="fragment fg-info">单只是读取文件信息没意思，读内容</p>
+          <p class="fragment fg-success"><span class="label label-warning">FileReader</span> 就是用来读取本地文件的对象</p>
+          <pre class="fragment"><code data-trim contenteditable>
+var reader = new FileReader();
+reader.addEventListener('load', function () {
+  this.result; // 读取出来的结果
+});
+reader.readAsText(file); // 以文本的形式读取
+reader.readAsDataURL(file); // 以DataURI的形式读取
+// 以下（后台工程师用，前端不会用到）
+reader.readAsBinaryString(file); // 二进制格式
+reader.readAsArrayBuffer(file); // 字节数组
+          </code></pre>
+        </section>
+        <!-- 7.2. FileReader API end -->
+        <section>
+          <h4>文件系统 学习目标</h4>
+          <ul>
+            <li class="fragment fg-danger">熟练使用File API</li>
+            <li class="fragment fg-info">利用FileReader实现上传文件前在页面本地预览</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 7. 文件 API end -->
+      <!-- 8. 拖放操作 start -->
+      <section>
+        <section>
+          <h2>八、拖放操作</h2>
+        </section>
+        <!-- 8.1. 网页内拖放 start -->
+        <section>
+          <h3>网页内拖放</h3>
+          <p class="fragment fg-primary">参考链接：<a href="https://developer.mozilla.org/zh-CN/docs/DragDrop/Drag_Operations">拖放操作</a></p>
+        </section>
+        <!-- 8.1. 网页内拖放 end -->
+        <!-- 8.2. 桌面文件拖放 start -->
+        <section>
+          <h3>桌面文件拖放</h3>
+          <pre class="fragment"><code>
+document.querySelector('#dropzone')
+  .addEventListener('drop', function(e) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      document.querySelector('img').src = e.target.result;
+    };
+    reader.readAsDataURL(e.dataTransfer.files[0]);
+  });
+          </code></pre>
+        </section>
+        <!-- 8.2. 桌面文件拖放 end -->
+        <section>
+          <h3>拖放操作 学习目标</h3>
+          <ul>
+            <li class="fragment">学会使用ondragstart</li>
+            <li class="fragment">学会使用ondragend</li>
+            <li class="fragment">学会使用ondragover</li>
+            <li class="fragment">学会使用ondragleave</li>
+            <li class="fragment">学会使用ondrop</li>
+          </ul>
+        </section>
+      </section>
+      <!-- 8. 拖放操作 end -->
+      <!-- 9. 硬件信息访问 start -->
+      <!-- 整个硬件访问API全部都在后期H5移动APP开发再讲 -->
+      <!-- 9. 硬件信息访问 end -->
+    </div>
+    <script src="lib/reveal/lib/js/head.min.js"></script>
+    <script src="lib/reveal/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        width: 900,
+        height: 675,
+        margin: 0.1,
+        minScale: 0.2,
+        maxScale: 1.4,
+        // center: false,
+        // 过渡 // none/fade/slide/convex/concave/zoom
+        transition: 'slide',
+        backgroundTransition: 'slide',
+        // 方向控制器显示
+        controls: true,
+        // 展示进度
+        progress: false,
+        // 页码
+        slideNumber: false,
+        // URL Hash中记住历史
+        history: true,
+        // 链接预览
+        previewLinks: true,
+        keyboard: {
+          13: 'next',
+          112: function() {
+            Reveal.configure({
+              showNotes: !Reveal.getConfig().showNotes
+            });
+          }
+        },
+        // Optional reveal.js plugins
+        dependencies: [{
+          src: 'lib/reveal/lib/js/classList.js',
+          condition: function() {
+            return !document.body.classList;
+          }
+        }, {
+          src: 'lib/reveal/plugin/markdown/marked.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          }
+        }, {
+          src: 'lib/reveal/plugin/markdown/markdown.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          }
+        }, {
+          src: 'lib/reveal/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        }, {
+          src: 'lib/reveal/plugin/zoom-js/zoom.js',
+          async: true
+        }, {
+          src: 'lib/reveal/plugin/notes/notes.js',
+          async: true
+        }]
+      });
+    </script>
+</body>
+
+</html>
